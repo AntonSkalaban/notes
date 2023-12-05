@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Note } from "types/types";
-import { EditableNoteField } from "./EditableNoteField/EditableNoteField";
+import { EditableNoteField } from "../EditableNoteField/EditableNoteField";
 import { Box, IconButton, Paper } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
@@ -52,8 +52,14 @@ export const EditableNote: React.FC<EditableNoteProps> = ({
   return (
     <Paper variant="elevation" sx={style.editableNote}>
       <EditableNoteField
-        title={note.title}
-        body={note.body}
+        fieldName="title"
+        text={note.title}
+        handleChange={handleChange}
+      />
+
+      <EditableNoteField
+        fieldName="body"
+        text={note.body}
         handleChange={handleChange}
       />
 
@@ -65,6 +71,7 @@ export const EditableNote: React.FC<EditableNoteProps> = ({
         >
           <AddIcon />
         </IconButton>
+
         <IconButton aria-label="delete" onClick={handleClose}>
           <CloseIcon />
         </IconButton>
