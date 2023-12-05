@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Box, IconButton, Modal, Paper, Typography } from "@mui/material";
+import { Box, IconButton, Modal, Paper } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { EditableNote } from "components/EditableNote/EditableNote";
 import { Note } from "types/types";
 import { useAction } from "hooks";
 import { style } from "./style";
+import { NoteText } from "components/shares/components/NoteText/NoteText";
+import { NoteHashtags } from "components/shares/components/NoteHashtags/NoteHashTags";
 
 interface ReadableNoteProps {
   note: Note;
@@ -30,16 +32,24 @@ export const ReadableNote: React.FC<ReadableNoteProps> = ({ note }) => {
   return (
     <>
       <Paper variant="elevation" sx={style.readableNote}>
-        <Typography variant="body1">{note.title}</Typography>
-        <Typography>{note.body}</Typography>
+        <Box sx={{ marginBottom: "20px" }}>
+          <NoteText
+            text={note.title}
+            style={{ fontSize: "18px", fontWeight: 600 }}
+          />
+          <NoteText text={note.body} style={{ fontSize: "14px" }} />
+        </Box>
 
-        <Box className="btns-box" sx={style.readableBtnsBox}>
-          <IconButton aria-label="edit" onClick={openModal}>
-            <EditIcon />
-          </IconButton>
-          <IconButton aria-label="delete" onClick={handleDelete}>
-            <DeleteIcon />
-          </IconButton>
+        <Box>
+          <NoteHashtags hashtags={note.hashtags} />
+          <Box className="btns-box" sx={style.readableBtnsBox}>
+            <IconButton aria-label="edit" onClick={openModal}>
+              <EditIcon />
+            </IconButton>
+            <IconButton aria-label="delete" onClick={handleDelete}>
+              <DeleteIcon />
+            </IconButton>
+          </Box>
         </Box>
       </Paper>
 

@@ -1,19 +1,21 @@
 import React from "react";
-import { Box, TextField, Typography, styled } from "@mui/material";
+import { Box, TextField, styled } from "@mui/material";
 import { style } from "./style";
+import { NoteText } from "components/shares/components/NoteText/NoteText";
+// import { getHiglightText } from "helpers/Hashtags";
 
-const NoteTypography = styled(Typography)(() => ({
-  width: "100%",
-  minHeight: "26px",
-  boxSizing: "border-box",
-  whiteSpace: "pre-wrap",
-  wordWrap: "break-word",
-  color: "black",
-  fontSize: "18px",
-  letterSpacing: "0.05rem",
-  padding: 0,
-  lineHeight: "1.15rem",
-}));
+// export const NoteTypography = styled(Typography)(() => ({
+//   width: "100%",
+//   minHeight: "26px",
+//   boxSizing: "border-box",
+//   whiteSpace: "pre-wrap",
+//   wordWrap: "break-word",
+//   color: "black",
+//   fontSize: "18px",
+//   letterSpacing: "0.05rem",
+//   padding: 0,
+//   lineHeight: "1.15rem",
+// }));
 
 const NoteTextField = styled(TextField)(() => ({
   width: "100%",
@@ -30,7 +32,7 @@ const NoteTextField = styled(TextField)(() => ({
   zIndex: 2,
   border: "none",
   padding: 0,
-  fontSize: "18px",
+  // fontSize: "14x",
   lineHeight: "1.15rem",
   letterSpacing: "0.05rem",
   "& ::placeholder": {
@@ -48,29 +50,10 @@ export const EditableNoteField: React.FC<NoteField> = ({
   text,
   handleChange,
 }) => {
-  const regex = /(#[A-Za-z0-9а-яАЯёЁ_]+)/g;
-
   return (
     <Box sx={{ marginBottom: "20px" }}>
-      {" "}
       <Box sx={{ position: "relative" }}>
-        <NoteTypography as="p" sx={style[fieldName]}>
-          {text.split(regex).map((el, index) => {
-            return el.match(regex) ? (
-              <NoteTypography
-                as="span"
-                style={{ ...style.hashtag, ...style[fieldName] }}
-                key={index}
-              >
-                {el}
-              </NoteTypography>
-            ) : (
-              <NoteTypography as="span" key={index} style={style[fieldName]}>
-                {el}
-              </NoteTypography>
-            );
-          })}
-        </NoteTypography>
+        <NoteText text={text} style={style[fieldName]} />
 
         <NoteTextField
           sx={style[fieldName]}

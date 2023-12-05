@@ -6,6 +6,5 @@ export const style = {
   btnsBox: {
     display: "flex",
     justifyContent: "space-between",
-    marginTop: 20,
   },
 };

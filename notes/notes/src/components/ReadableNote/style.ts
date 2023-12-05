@@ -1,6 +1,6 @@
 export const style = {
   readableNote: {
-    width: 200,
+    width: 300,
     padding: "20px",
     paddingBottom: "40px",
     position: "relative",

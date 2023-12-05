@@ -1,10 +1,10 @@
 export const style = {
   title: {
-    fontSize: "20px",
+    fontSize: "18px",
     fontWeight: 600,
   },
   body: {
-    fontSize: "18px",
+    fontSize: "14px",
   },
 
   input: {
