@@ -6,8 +6,8 @@ import { EditableNote } from "components/EditableNote/EditableNote";
 import { Note } from "types/types";
 import { useAction } from "hooks";
 import { style } from "./style";
-import { NoteText } from "components/shares/components/NoteText/NoteText";
-import { NoteHashtags } from "components/shares/components/NoteHashtags/NoteHashTags";
+import { NoteText } from "shares/components/NoteText/NoteText";
+import { NoteHashtags } from "shares/components/NoteHashtags/NoteHashtags";
 
 interface ReadableNoteProps {
   note: Note;

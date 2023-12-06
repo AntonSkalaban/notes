@@ -18,6 +18,7 @@
     "paths": {
       "assets/*": ["assets/*"],
       "components/*": ["components/*"],
+      "shares/*": ["shares/*"],
       "hok/*": ["hok/*"],
       "helpers/*": ["helpers/*"],
       "services/*": ["services/*"],

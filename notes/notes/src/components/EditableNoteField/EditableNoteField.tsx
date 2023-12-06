@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, TextField, styled } from "@mui/material";
 import { style } from "./style";
-import { NoteText } from "components/shares/components/NoteText/NoteText";
+import { NoteText } from "shares/components/NoteText/NoteText";
 // import { getHiglightText } from "helpers/Hashtags";
 
 // export const NoteTypography = styled(Typography)(() => ({

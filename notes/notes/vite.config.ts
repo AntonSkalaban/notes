@@ -16,6 +16,7 @@ export default defineConfig({
       store: "/src/store",
       types: "/src/types",
       const: "/src/const",
+      shares: "/src/shares",
     },
   },
 });

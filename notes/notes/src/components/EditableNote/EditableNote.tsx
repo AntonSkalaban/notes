@@ -6,8 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
 import { style } from "./style";
 import { findHashtags, getUnicArray } from "helpers";
-import { NoteTypography } from "components/shares/components/NoteText/NoteText";
-import { NoteHashtags } from "components/shares/components/NoteHashtags/NoteHashTags";
+import { NoteHashtags } from "shares/components/NoteHashtags/NoteHashtags";
 
 interface EditableNoteProps {
   noteData?: Note;
