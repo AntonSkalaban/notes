@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { Box, IconButton, Paper } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
-import { EditableNoteField } from "./EditableNoteField/EditableNoteField";
-import { findHashtags, getUnicArray } from "shared/helpers";
+import { Text, getUnicArray } from "shared/helpers";
 import { Note } from "shared/types";
-import { NoteHashtags } from "shared/components";
-
+import { EditNoteField, NoteHashtags } from "shared/components";
 import { style } from "./style";
 
 interface EditableNoteProps {
@@ -34,7 +32,7 @@ export const EditableNote: React.FC<EditableNoteProps> = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    const hashtags = findHashtags(value);
+    const hashtags = Text.findHashtags(value);
 
     setNote((prev) => {
       return {
@@ -59,13 +57,13 @@ export const EditableNote: React.FC<EditableNoteProps> = ({
   return (
     <Paper variant="elevation" sx={style.editableNote}>
       <Box sx={{ marginBottom: "20px" }}>
-        <EditableNoteField
+        <EditNoteField
           fieldName="title"
           text={note.title}
           handleChange={handleChange}
         />
 
-        <EditableNoteField
+        <EditNoteField
           fieldName="body"
           text={note.body}
           handleChange={handleChange}

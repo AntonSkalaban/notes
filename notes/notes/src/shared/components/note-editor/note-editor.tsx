@@ -4,12 +4,12 @@ import { NoteText } from "shared/components";
 import { NoteTextaria } from "shared/ui";
 import { style } from "./style";
 
-interface EditableNoteFieldProps {
+interface EditNoteFieldProps {
   fieldName: "title" | "body";
   text: string;
   handleChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
-export const EditableNoteField: React.FC<EditableNoteFieldProps> = ({
+export const EditNoteField: React.FC<EditNoteFieldProps> = ({
   fieldName,
   text,
   handleChange,

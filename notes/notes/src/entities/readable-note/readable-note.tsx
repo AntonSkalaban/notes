@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Box, IconButton, Modal, Paper } from "@mui/material";
+import { Box, IconButton, Paper } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { EditableNote } from "entities/note/EditableNote/EditableNote";
-import { NoteText, NoteHashtags } from "shared/components";
+import { PopUp } from "features";
+import { EditableNote, NoteText, NoteHashtags } from "shared/components";
 import { useAction } from "shared/hooks";
 import { Note } from "shared/types";
 import { style } from "./style";
@@ -41,6 +41,7 @@ export const ReadableNote: React.FC<ReadableNoteProps> = ({ note }) => {
 
         <Box>
           <NoteHashtags hashtags={note.hashtags} />
+
           <Box className="btns-box" sx={style.readableBtnsBox}>
             <IconButton aria-label="edit" onClick={openModal}>
               <EditIcon />
@@ -52,20 +53,13 @@ export const ReadableNote: React.FC<ReadableNoteProps> = ({ note }) => {
         </Box>
       </Paper>
 
-      <Modal
-        open={isModalOpen}
-        onClose={closeModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style.modalBox}>
-          <EditableNote
-            closeNote={closeModal}
-            saveNote={editNote}
-            noteData={note}
-          />
-        </Box>
-      </Modal>
+      <PopUp isOpen={isModalOpen} onClose={closeModal}>
+        <EditableNote
+          closeNote={closeModal}
+          saveNote={editNote}
+          noteData={note}
+        />
+      </PopUp>
     </>
   );
 };
