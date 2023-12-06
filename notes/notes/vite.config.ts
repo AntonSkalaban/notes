@@ -7,16 +7,9 @@ export default defineConfig({
   resolve: {
     alias: {
       assets: "src/assets",
-      components: "/src/components",
-      pages: "/src/pages",
-      hooks: "/src/hooks",
-      hok: "/src/hok",
-      helpers: "/src/helpers",
-      services: "/src/services",
-      store: "/src/store",
-      types: "/src/types",
-      const: "/src/const",
-      shares: "/src/shares",
+      shared: "/src/shared",
+      entities: "/src/entities",
+      features: "/src/features",
     },
   },
 });
