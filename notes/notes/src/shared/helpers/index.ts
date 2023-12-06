@@ -1,2 +1,2 @@
-export * from "./Hashtags";
+export * from "./Text";
 export * from "./getUnicArray";

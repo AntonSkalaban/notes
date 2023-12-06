@@ -1,12 +1,16 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useAutocomplete } from "@mui/base/useAutocomplete";
 import CheckIcon from "@mui/icons-material/Check";
 import { getNotesHashTags } from "shared/store/selectors";
 import { InputWrapper, Label, Listbox, Root, StyledTag } from "./ui";
+import { useAction } from "shared/hooks";
 
 export const NotesFilters = () => {
   const hashtags = useSelector(getNotesHashTags);
+
+  const { saveFilterValue } = useAction();
+
   const {
     getRootProps,
     getInputLabelProps,
@@ -24,6 +28,10 @@ export const NotesFilters = () => {
     options: hashtags,
     getOptionLabel: (option) => option,
   });
+
+  useEffect(() => {
+    saveFilterValue(value);
+  }, [saveFilterValue, value]);
 
   return (
     <Root>

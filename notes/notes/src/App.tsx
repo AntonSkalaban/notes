@@ -1,11 +1,17 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { Box, Container, CssBaseline } from "@mui/material";
-import { NotesList } from "entities/notes-list/notes-list";
-import { NoteCreator } from "features/note-creator/note-creator";
-import "./App.css";
-import { NotesFilters } from "features/notes-filters/notes-filters";
+import { NotesList } from "entities";
+import { NoteCreator, NotesFilters } from "features";
+import { useAction } from "shared/hooks";
 
 export function App() {
+  const { initNotes } = useAction();
+
+  useEffect(() => {
+    initNotes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <React.Fragment>
       <CssBaseline />
