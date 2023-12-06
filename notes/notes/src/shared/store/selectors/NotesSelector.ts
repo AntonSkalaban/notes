@@ -1,6 +1,6 @@
-import { getUnicArray } from "./../../helpers/getUnicArray";
+import { getUnicArray } from "../../helpers/getUnicArray";
 import { createSelector } from "@reduxjs/toolkit";
-import { RootState } from "store/store";
+import { RootState } from "shared/store/store";
 
 export const getNotes = (state: RootState) => state.notes.notes;
 export const getNotesHashTags = createSelector(getNotes, (state) => {

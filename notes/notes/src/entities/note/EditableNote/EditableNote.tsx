@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Note } from "types/types";
-import { EditableNoteField } from "../EditableNoteField/EditableNoteField";
 import { Box, IconButton, Paper } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
+import { EditableNoteField } from "./EditableNoteField/EditableNoteField";
+import { findHashtags, getUnicArray } from "shared/helpers";
+import { Note } from "shared/types";
+import { NoteHashtags } from "shared/components";
+
 import { style } from "./style";
-import { findHashtags, getUnicArray } from "helpers";
-import { NoteHashtags } from "shares/components/NoteHashtags/NoteHashtags";
 
 interface EditableNoteProps {
   noteData?: Note;

@@ -1,5 +1,5 @@
 import React from "react";
-import { NoteTypography } from "../NoteText/NoteText";
+import { NoteTypography } from "shared/ui";
 
 interface NoteHashtagsProps {
   hashtags: string[];

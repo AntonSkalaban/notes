@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Paper, TextField } from "@mui/material";
-import { EditableNote } from "../EditableNote/EditableNote";
-import { useAction } from "hooks";
+import { EditableNote } from "../../entities/note/EditableNote/EditableNote";
+import { useAction } from "shared/hooks";
 import { style } from "./style";
 
 export const NoteCreator = () => {

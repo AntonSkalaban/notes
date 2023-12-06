@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { Box, IconButton, Modal, Paper } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { EditableNote } from "components/EditableNote/EditableNote";
-import { Note } from "types/types";
-import { useAction } from "hooks";
+import { EditableNote } from "entities/note/EditableNote/EditableNote";
+import { NoteText, NoteHashtags } from "shared/components";
+import { useAction } from "shared/hooks";
+import { Note } from "shared/types";
 import { style } from "./style";
-import { NoteText } from "shares/components/NoteText/NoteText";
-import { NoteHashtags } from "shares/components/NoteHashtags/NoteHashtags";
 
 interface ReadableNoteProps {
   note: Note;

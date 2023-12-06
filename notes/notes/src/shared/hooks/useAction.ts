@@ -1,6 +1,6 @@
 import { bindActionCreators } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import { addNote, editNote, deleteNote } from "store/slice";
+import { addNote, editNote, deleteNote } from "shared/store/slice";
 
 const actions = {
   addNote,
